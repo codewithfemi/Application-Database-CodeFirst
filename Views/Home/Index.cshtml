@@ -1,0 +1,31 @@
+﻿@model IDE.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Title</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">@Model.Description</a>.</p>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">DateCreated</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var person in Model.People)
+    {
+        <tr>
+            <th scope="row">@person.PersonId</th>
+            <td>@person.FirstName</td>
+            <td>@person.LastName</td>
+            <td>@person.DateCreated</td>
+        </tr>
+    }
+  </tbody>
+</table>
+</div>
